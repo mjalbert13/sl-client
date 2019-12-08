@@ -6,6 +6,7 @@ import Login from '../pages/Login';
 import Signup from '../pages/Signup';
 import Settings from '../pages/Settings';
 import NotFound from '../pages/NotFound';
+import NewNote from '../pages/Notes';
 
 const Routes = ({ appProps}) => {
     return (
@@ -14,7 +15,8 @@ const Routes = ({ appProps}) => {
             <Switch>
                 <AppliedRoute exact path='/' component={Home} appProps={appProps} />
                 <AppliedRoute exact path='/login' component={Login} appProps={appProps} />
-                <Route exact path='/signup' component={Signup} />
+                <AppliedRoute path="/signup" exact component={Signup} appProps={appProps} />
+                <AppliedRoute path="/notes/new" exact component={NewNote} appProps={appProps} />
                 <Route exact path ='/settings'component={Settings} />
                 
                 <Route component={NotFound} />

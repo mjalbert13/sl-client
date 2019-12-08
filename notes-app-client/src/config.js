@@ -1,11 +1,12 @@
 export default {
+    MAX_ATTACHMENT_SIZE: 5000000,
     s3: {
       REGION: "us-east-2",
       BUCKET: "matts-test-bucket"
     },
     apiGateway: {
       REGION: "us-east-2",
-      URL: "https://ewhz70jg6i.execute-api.us-east-2.amazonaws.com/prod/"
+      URL: "https://ewhz70jg6i.execute-api.us-east-2.amazonaws.com/prod"
     },
     cognito: {
       REGION: "us-east-2",

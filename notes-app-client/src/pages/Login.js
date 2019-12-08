@@ -1,11 +1,18 @@
 import React, { Fragment, useState  } from 'react';
 import {Link, Redirect } from 'react-router-dom';
+
 import { Auth } from "aws-amplify";
 
 const Login = (props) => {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [formData, setFormData] = useState({
+        email:'',
+        password:'',
+    })
+
+    const {  email, password} = formData;
+
+    const onChange = e=> setFormData({ ...formData,[e.target.name]: e.target.value })
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -37,7 +44,7 @@ const Login = (props) => {
                     name='email'
                     placeholder='Email Address'
                     value={email}
-                    onChange={e => setEmail(e.target.value)} />
+                    onChange={e => onChange(e)} />
                 </div>
                 <div className='form-group'>
                     <input
@@ -45,7 +52,7 @@ const Login = (props) => {
                     name='password'
                     placeholder='Password'
                     value={password}
-                    onChange={e => setPassword(e.target.value)} />
+                    onChange={e=> onChange(e)} />
                 </div>
                 <input type='submit' className='btn btn-primary' value='login' disabled={!validateForm} />
             </form>
