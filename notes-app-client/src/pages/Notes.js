@@ -51,7 +51,7 @@ export default function NewNote(props) {
 
   return (
     <div className="NewNote">
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <FormGroup controlId="content">
           <FormControl
             value={content}
@@ -61,9 +61,10 @@ export default function NewNote(props) {
         </FormGroup>
         <FormGroup controlId="file">
           <ControlLabel>Attachment</ControlLabel>
-          <FormControl onChange={handleFileChange} type="file" />
+          <FormControl className='btn btn-success' onChange={handleFileChange} type="file" />
         </FormGroup>
         <button
+          className='btn btn-primary'
           block
           type="submit"
           bsSize="large"

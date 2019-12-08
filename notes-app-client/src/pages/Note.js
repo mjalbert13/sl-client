@@ -115,7 +115,7 @@ export default function Notes(props) {
   return (
     <div className="Notes">
       {note && (
-        <form onSubmit={handleSubmit}>
+        <form className ='form' onSubmit={handleSubmit}>
           <FormGroup controlId="content">
             <FormControl
               value={content}
@@ -142,6 +142,7 @@ export default function Notes(props) {
             <FormControl onChange={handleFileChange} type="file" />
           </FormGroup>
           <button
+            className='btn btn-success'
             block
             type="submit"
             bsSize="large"
@@ -152,9 +153,9 @@ export default function Notes(props) {
             Save
           </button>
           <button
+            className='btn btn-danger'
             block
             bsSize="large"
-            bsStyle="danger"
             onClick={handleDelete}
             isLoading={isDeleting}
           >

@@ -69,7 +69,7 @@ export default function Signup(props) {
 
   function renderConfirmationForm() {
     return (
-      <form onSubmit={handleConfirmationSubmit}>
+      <form className='form' onSubmit={handleConfirmationSubmit}>
         <FormGroup controlId="confirmationCode" bsSize="large" className='form-group'>
           <ControlLabel>Confirmation Code</ControlLabel>
           <FormControl
@@ -95,7 +95,7 @@ export default function Signup(props) {
 
   function renderForm() {
     return (
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <FormGroup controlId="email" bsSize="large" className='form-group'>
           <ControlLabel>Email</ControlLabel>
           <FormControl

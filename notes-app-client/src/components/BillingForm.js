@@ -36,8 +36,8 @@ const  BillingForm = ({ isLoading, onSubmit, ...props }) => {
   }
 
   return (
-    <form className="BillingForm" onSubmit={handleSubmitClick}>
-      <FormGroup bsSize="large" controlId="storage">
+    <form className="form" onSubmit={handleSubmitClick}>
+      <FormGroup bsSize="large" controlId="storage" className='form-group'>
         <ControlLabel>Storage</ControlLabel>
         <FormControl
           min="0"
@@ -48,7 +48,7 @@ const  BillingForm = ({ isLoading, onSubmit, ...props }) => {
         />
       </FormGroup>
       <hr />
-      <FormGroup bsSize="large" controlId="name">
+      <FormGroup bsSize="large" controlId="name" className='form-group'>
         <ControlLabel>Cardholder&apos;s name</ControlLabel>
         <FormControl
           type="text"
@@ -66,6 +66,7 @@ const  BillingForm = ({ isLoading, onSubmit, ...props }) => {
         }}
       />
       <button
+        className='btn btn-primary'
         block
         type="submit"
         bsSize="large"
