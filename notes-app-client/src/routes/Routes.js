@@ -8,6 +8,8 @@ import Settings from '../pages/Settings';
 import NotFound from '../pages/NotFound';
 import NewNote from '../pages/Notes';
 import Notes from '../pages/Note';
+import AuthenticatedRoute from './AuthenticatedRoute';
+import UnauthenticatedRoute from './UnauthenticatedRoute';
 
 
 const Routes = ({ appProps}) => {
@@ -16,12 +18,12 @@ const Routes = ({ appProps}) => {
 
             <Switch>
                 <AppliedRoute exact path='/' component={Home} appProps={appProps} />
-                <AppliedRoute exact path='/login' component={Login} appProps={appProps} />
-                <AppliedRoute path="/signup" exact component={Signup} appProps={appProps} />
-                <AppliedRoute path="/notes/new" exact component={NewNote} appProps={appProps} />
-                <AppliedRoute path="/notes/:id" exact component={Notes} appProps={appProps} />
-                <Route exact path ='/settings'component={Settings} />
-                
+                <UnauthenticatedRoute path="/login" exact component={Login} appProps={appProps} />
+                <UnauthenticatedRoute path="/signup" exact component={Signup} appProps={appProps} />
+                <AuthenticatedRoute path="/settings" exact component={Settings} appProps={appProps} />
+                <AuthenticatedRoute path="/notes/new" exact component={NewNote} appProps={appProps} />
+                <AuthenticatedRoute path="/notes/:id" exact component={Notes} appProps={appProps} />
+                                
                 <Route component={NotFound} />
             </Switch>
         </section>

@@ -1,5 +1,6 @@
 export default {
     MAX_ATTACHMENT_SIZE: 5000000,
+    STRIPE_KEY: "pk_test_fntA0QEDRcT70m4jAuHt67Xh00ZzdoB2Pn",
     s3: {
       REGION: "us-east-2",
       BUCKET: "matts-test-bucket"

@@ -17,7 +17,7 @@ const Navbar = ({ appProps }) => {
     const authLinks =(
         <ul>
             <li><Link to='/settings'>Settings</Link></li>
-            <li onClick={handleLogout}>Logout</li>
+            <li onClick={handleLogout}><Link to='/'>Logout</Link></li>
         </ul>
     )
 
