@@ -28,6 +28,15 @@
   font-size: 24px;
 }
 
+.Notes form {
+  padding-bottom: 15px;
+}
+
+.Notes form textarea {
+  height: 300px;
+  font-size: 24px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -7,6 +7,8 @@ import Signup from '../pages/Signup';
 import Settings from '../pages/Settings';
 import NotFound from '../pages/NotFound';
 import NewNote from '../pages/Notes';
+import Notes from '../pages/Note';
+
 
 const Routes = ({ appProps}) => {
     return (
@@ -17,6 +19,7 @@ const Routes = ({ appProps}) => {
                 <AppliedRoute exact path='/login' component={Login} appProps={appProps} />
                 <AppliedRoute path="/signup" exact component={Signup} appProps={appProps} />
                 <AppliedRoute path="/notes/new" exact component={NewNote} appProps={appProps} />
+                <AppliedRoute path="/notes/:id" exact component={Notes} appProps={appProps} />
                 <Route exact path ='/settings'component={Settings} />
                 
                 <Route component={NotFound} />
