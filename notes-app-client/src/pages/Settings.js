@@ -41,6 +41,7 @@ const Settings = (props) => {
       
       return (
         <div className="Settings">
+          <h1 className='large text-primary'>Billing Information</h1>
           <StripeProvider apiKey={config.STRIPE_KEY}>
             <Elements>
               <BillingForm

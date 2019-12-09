@@ -61,7 +61,8 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f0eb84;
+  background-image: url("https://www.transparenttextures.com/patterns/notebook-dark.png");
   color: #333;
 }
 

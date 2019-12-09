@@ -117,6 +117,7 @@ export default function Notes(props) {
   
   return (
     <div className="Notes">
+      <h1 className='large text-primary'>Update Note</h1>
       {note && (
         <form className ='form' onSubmit={handleSubmit}>
           <FormGroup controlId="content">

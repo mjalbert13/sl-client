@@ -56,6 +56,7 @@ export default function NewNote(props) {
 
   return (
     <div className="NewNote">
+      <h1 classname='large text-primary'>Create a note</h1>
       <form className='form' onSubmit={handleSubmit}>
         <FormGroup controlId="content">
           <FormControl

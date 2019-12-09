@@ -39,7 +39,7 @@ const  BillingForm = ({ isLoading, onSubmit, ...props }) => {
     <form className="form" onSubmit={handleSubmitClick}>
       <FormGroup bsSize="large" controlId="storage" className='form-group'>
         <ControlLabel>Storage</ControlLabel>
-        <input
+        <FormControl
           min="0"
           type="text"
           value={fields.storage}
