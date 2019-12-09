@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { render } from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider as AlertProvider} from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 import Amplify from 'aws-amplify';
 import config from './config';
 import './index.css';
@@ -31,10 +33,19 @@ Amplify.configure({
   }
 });
 
+const options = {
+  position: 'top center',
+  timeout: 5000,
+  offset: '30px',
+  transition: 'scale'
+}
+
 ReactDOM.render(
+  <AlertProvider template={AlertTemplate} { ...options}>
     <Router>
       <App />
-    </Router>,
+    </Router>
+  </AlertProvider>,
     document.getElementById('root')
 );
 

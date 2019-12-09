@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import { PageHeader, ListGroup, ListGroupItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { API } from "aws-amplify";
+import { useAlert } from 'react-alert'
 
 export default function Home(props) {
+
+  const alert = useAlert();
+
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -17,7 +21,7 @@ export default function Home(props) {
         const notes = await loadNotes();
         setNotes(notes);
       } catch (e) {
-        alert(e);
+        alert.show(e);
       }
   
       setIsLoading(false);

@@ -3,8 +3,12 @@ import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { API } from "aws-amplify";
 import config from "../config";
 import { s3Upload } from "../libs/awsLib";
+import { useAlert } from 'react-alert'
 
 export default function NewNote(props) {
+
+  const alert = useAlert(); 
+
   const file = useRef(null);
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +25,7 @@ export default function NewNote(props) {
     event.preventDefault();
   
     if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
-      alert(
+      alert.show(
         `Please pick a file smaller than ${config.MAX_ATTACHMENT_SIZE /
           1000000} MB.`
       );
@@ -36,9 +40,10 @@ export default function NewNote(props) {
         : null;
   
       await createNote({ content, attachment });
+      alert.show("Attachment uploaded!")
       props.history.push("/");
     } catch (e) {
-      alert(e);
+      alert.show(e);
       setIsLoading(false);
     }
   }

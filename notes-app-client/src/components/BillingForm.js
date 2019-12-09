@@ -39,9 +39,9 @@ const  BillingForm = ({ isLoading, onSubmit, ...props }) => {
     <form className="form" onSubmit={handleSubmitClick}>
       <FormGroup bsSize="large" controlId="storage" className='form-group'>
         <ControlLabel>Storage</ControlLabel>
-        <FormControl
+        <input
           min="0"
-          type="number"
+          type="text"
           value={fields.storage}
           onChange={handleFieldChange}
           placeholder="Number of notes to store"

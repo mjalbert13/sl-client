@@ -1,9 +1,11 @@
 import React, { Fragment, useState  } from 'react';
 import {Link, Redirect } from 'react-router-dom';
-
+import { useAlert } from 'react-alert';
 import { Auth } from "aws-amplify";
 
 const Login = (props) => {
+
+    const alert = useAlert();
 
     const [formData, setFormData] = useState({
         email:'',
@@ -25,7 +27,7 @@ const Login = (props) => {
           await Auth.signIn(email, password);
           props.userHasAuthenticated(true);
         } catch (e) {
-          alert(e.message);
+          alert.show(e.message);
         }
     }
 

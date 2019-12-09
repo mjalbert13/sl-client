@@ -2,11 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 import { API, Storage } from "aws-amplify";
 import { FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { s3Upload } from "../libs/awsLib";
-
+import { useAlert } from 'react-alert'
 import config from "../config";
 
 
 export default function Notes(props) {
+
+  const alert = useAlert();
+
     const file = useRef(null);
     const [note, setNote] = useState(null);
     const [content, setContent] = useState("");
@@ -30,7 +33,7 @@ export default function Notes(props) {
         setContent(content);
         setNote(note);
       } catch (e) {
-        alert(e);
+        alert.show(e);
       }
     }
 

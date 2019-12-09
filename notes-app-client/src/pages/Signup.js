@@ -8,9 +8,13 @@ import {
 } from "react-bootstrap";
 import { Auth } from 'aws-amplify';
 import { useFormFields } from "../libs/hookLib";
+import { useAlert } from 'react-alert';
 
 
 export default function Signup(props) {
+
+  const alert = useAlert();
+
   const [fields, handleFieldChange] = useFormFields({
     email: "",
     password: "",
@@ -45,7 +49,7 @@ export default function Signup(props) {
       setIsLoading(false);
       setNewUser(newUser);
     } catch (e) {
-      alert(e.message);
+      alert.show(e.message);
       setIsLoading(false);
     }
   }
@@ -62,7 +66,7 @@ export default function Signup(props) {
       props.userHasAuthenticated(true);
       
     } catch (e) {
-      alert(e.message);
+      alert.show(e.message);
       setIsLoading(false);
     }
   }

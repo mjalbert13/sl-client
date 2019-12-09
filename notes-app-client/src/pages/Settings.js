@@ -3,10 +3,13 @@ import { API } from 'aws-amplify'
 import { Elements, StripeProvider } from "react-stripe-elements";
 import BillingForm from "../components/BillingForm";
 import config from "../config";
-
+import { useAlert } from 'react-alert';
 
 
 const Settings = (props) => {
+
+  const alert = useAlert();
+
     const [isLoading, setIsLoading] = useState(false);
     function billUser(details) {
         return API.post("notes", "/billing", {
@@ -28,10 +31,10 @@ const Settings = (props) => {
             source: token.id
           });
       
-          alert("Your card has been charged successfully!");
+          alert.show("Your card has been charged successfully!");
           props.history.push("/");
         } catch (e) {
-          alert(e);
+          alert.show(e);
           setIsLoading(false);
         }
       }
